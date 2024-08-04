@@ -118,7 +118,7 @@
                 console.log("Follower Count: ", followerCount);
 
                 let output = `<div class="inner-part">
-            <p style="text-align:center; font-size:60px">${username}</p>
+            <p style="text-align:center; font-size:60px"><a href="https://www.instagram.com/${username}" class="no-effect">${username}</a></p>
             
             <p>${fullName}</p>
             <p>${biography}</p>
@@ -147,12 +147,12 @@
 
                 const ctx = document.getElementById("myChart").getContext("2d");
                 const myChart = new Chart(ctx, {
-                  type: "pie",
+                  type: "bar",
                   data: {
                     labels: labels,
                     datasets: [
                       {
-                        label: "Instagram Data",
+                        label: fullName,
                         data: chartData,
                         backgroundColor: [
                           "rgba(255, 99, 132, 0.2)",
