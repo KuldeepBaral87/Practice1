@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Axios</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script
@@ -18,7 +30,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -39,7 +51,16 @@
         </div>
 
         <div class="data" style="display: none">
-          <div class="resultFetch" id="resultFetch"></div>
+          <div
+            class="resultFetch"
+            id="resultFetch"
+            style="border-top: 1px solid blue"
+          >
+            <div style="font-size: 50px">
+              <p>Dspome</p>
+              <p>Text</p>
+            </div>
+          </div>
 
           <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
         </div>
@@ -52,7 +73,7 @@
           $("#message").show();
           e.preventDefault();
           let username = document.querySelector("#username").value;
-          alert(username);
+          // alert(username);
 
           console.log(username);
           const options = {
@@ -96,8 +117,8 @@
                 console.log("Profile Picture URL: ", profilePicUrl);
                 console.log("Follower Count: ", followerCount);
 
-                let output = `<div class="">
-            <p>${username}</p>
+                let output = `<div class="inner-part">
+            <p style="text-align:center; font-size:60px">${username}</p>
             
             <p>${fullName}</p>
             <p>${biography}</p>
@@ -117,7 +138,7 @@
 
                 document.querySelector("#resultFetch").innerHTML = output;
 
-                alert(output);
+                // alert(output);//
                 flwCount = "Followers:" + followerCount;
                 flwingCount = "Following:" + followingCount;
                 // Prepare data for Chart.js
@@ -171,5 +192,7 @@
         });
       });
     </script>
+
+    <script src="script.js"></script>
   </body>
 </html>

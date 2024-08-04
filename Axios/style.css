@@ -66,7 +66,33 @@ p{
     display: flex;
     align-self: center;
     justify-self: center;
-    color:white;
+    color:white;position: relative;
+    
+    transition: all 0.4s  ;
+
+}
+
+.resultFetch::before
+{
+    content:'';
+    position: absolute;
+    filter: blur(5px);
+    left:0;
+    right:0;
+    top:-20px;
+    height:30px;
+    border-radius: 30px 30px 0 0;
+    background-image: linear-gradient(90deg,#f9ce34,#ee2a7b, #6228d7);
+}
+.resultFetch::after
+{
+    content:'';
+    position: absolute;
+    left:-20px;
+    right:-20px;
+    top:-5px;
+    background: black;
+    height:25px;
 
 }
 .follow{
